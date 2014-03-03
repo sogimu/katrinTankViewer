@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!--
+ Tests completed in 15 milliseconds.
+1 tests of 1 passed, 0 failed. 
+-->
+<testsuite name="QUnit - JavaScript Tests" timestamp="2014-03-03T09:32:10Z" tests="1" failures="0" time="0.015">
+<testcase name="Test" classname="class katrinTankViewer">
+</testcase>
+</testsuite>
