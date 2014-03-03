@@ -1,6 +1,3 @@
 [submodule "lib/jsdoc"]
 	path = lib/jsdoc
 	url = https://github.com/jsdoc3/jsdoc
-[submodule "lib/Closure-compiler"]
-	path = lib/Closure-compiler
-	url = https://github.com/jsdoc3/jsdoc
