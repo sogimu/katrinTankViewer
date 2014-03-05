@@ -9,7 +9,7 @@
  *
  */
 
-window.KatrinTankViewer = {};
+window.KTV = {};
 
 (function(namespace) {
     var KatrinTankViewer = function() {
@@ -75,4 +75,4 @@ window.KatrinTankViewer = {};
     
     namespace.KatrinTankViewer = KatrinTankViewer();
 
-})(window.KatrinTankViewer);
+})(window.KTV);

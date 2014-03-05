@@ -35,4 +35,4 @@
     
     namespace.Sys = Sys;
 
-})(window.KatrinTankViewer);
+})(window.KTV);

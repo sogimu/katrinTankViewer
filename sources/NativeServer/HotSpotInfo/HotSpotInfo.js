@@ -107,4 +107,4 @@
     
     namespace.HotSpotInfo = HotSpotInfo;
 
-})(window.KatrinTankViewer);
+})(window.KTV);

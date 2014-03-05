@@ -35,4 +35,4 @@
     
     namespace.Viewer = Viewer;
 
-})(window.KatrinTankViewer);
+})(window.KTV);

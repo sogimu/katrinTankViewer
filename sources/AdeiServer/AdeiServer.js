@@ -44,4 +44,4 @@
     
     namespace.AdeiServer = AdeiServer;
 
-})(window.KatrinTankViewer);
+})(window.KTV);

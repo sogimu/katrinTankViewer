@@ -79,4 +79,4 @@
     
     namespace.ChanellValues = ChanellValues;
 
-})(window.KatrinTankViewer);
+})(window.KTV);
