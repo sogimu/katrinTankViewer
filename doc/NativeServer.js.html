@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: katrinTankViewer/katrineTankViewer.js</title>
+    <title>JSDoc: Source: NativeServer/NativeServer.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: katrinTankViewer/katrineTankViewer.js</h1>
+    <h1 class="page-title">Source: NativeServer/NativeServer.js</h1>
     
     
 
@@ -27,80 +27,64 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * @classdesc
- * KatrinTankViewer
+ * NativeServer
  * 
- * @class KatrinTankViewer
- * @this {KatrinTankViewer}
+ * @class NativeServer
+ * @this {KatrinTankViewer.NativeServer}
  * @author sogimu@nxt.ru Aleksandr Lizin aka sogimu
  * @version 0.1
  *
  */
 
-window.KatrinTankViewer = {};
-
 (function(namespace) {
-    var KatrinTankViewer = function() {
+    var NativeServer = function(O) {
 
         var me = {};
 
-        me.Init = function() {
+        me._serverURL = "";
+        me._pathToModel = "";
+        me._pathToHotSpotsInfo = "";
 
-        }
+        /**
+         * Get list of chanells by time in UNIX-stamp. You can choose what chanells you need.
+         *
+         * @method ChanellValues.GetChanellValuesByTime
+         * @param {array} chanells
+         * @param {time}  number
+         */
+        me._sendRequestToServer = function(callback) {
 
-        me.DrawDataOnHotSpots = function(hotSpotsValues) {
+        };
 
-        }
+        me.GetHotSpotsInfo = function(needUpdate, callback) {
 
-        me.ClearDataOnHotSpots = function() {
+        };
 
-        }
-        
-        me.OnKeyDown = function(e) {
+        me.GetModel = function(needUpdate, callback) {
 
-        }
-
-        me.OnKeyUp = function(e) {
-            
-        }
-
-        me.LookAt = function(point) {
-
-        }
-
-        me.SetScale = function(x, y) {
-
-        }
-
-        me.SetCriticalVolume = function(volume) {
-
-        }
-
-        me.StartRotating = function() {
-
-        }
-
-        me.StopRotating = function() {
-            
-        }
+        };
 
         /**
         * Constructor
         *
-        * @method HotSpotsValues.Constructor
-        * @this {KatrinTankViewer.HotSpotsValues}
+        * @method NativeServer.Constructor
+        * @this {KatrinTankViewer.NativeServer}
         * @param {Object} O
-        * @param {}       O.chanells
-        * @param {}       O.chanells
+        * @param {string} O.serverURL
+        * @param {string} O.pathToModel
+        * @param {string} O.pathToHotSpotsInfo
         */
         me.Constructor = function(O) {
-            O.chanells
+
         };
+
+        me.Constructor(O);
 
         return me;
 
     };
     
-    namespace.KatrinTankViewer = KatrinTankViewer();
+    namespace.NativeServer = NativeServer;
 
 })(window.KatrinTankViewer);</code></pre>
         </article>

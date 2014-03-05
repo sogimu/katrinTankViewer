@@ -67,8 +67,7 @@ window.KatrinTankViewer = {};
         */
         me.Constructor = function(O) {
             O.chanells
-            O.
-        }
+        };
 
         return me;
 
