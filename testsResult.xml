@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <!--
- Tests completed in 15 milliseconds.
-0 tests of 0 passed, 0 failed. 
+ Tests completed in 16 milliseconds.
+1 tests of 1 passed, 0 failed. 
 -->
-<testsuite name="QUnit - JavaScript Tests" timestamp="2014-03-06T11:31:15Z" tests="0" failures="0" time="0.015">
+<testsuite name="QUnit - JavaScript Tests" timestamp="2014-03-06T13:00:31Z" tests="1" failures="0" time="0.016">
+<testcase name="Creating without exeptions" classname="class NativeServer">
+</testcase>
 </testsuite>
