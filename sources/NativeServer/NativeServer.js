@@ -142,13 +142,6 @@
                     };break;
                 };    
             };
-
-            // this.GetHotSpotsInfo(true, function(data) {
-            //     // console.log("Getted HotSpotsInfo after instance");
-            // });
-            // this.GetModel(true, function(data) {
-            //     // console.log("Getted Model after instance");
-            // });
             
         };
 

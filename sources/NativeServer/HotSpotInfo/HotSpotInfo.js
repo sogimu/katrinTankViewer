@@ -22,7 +22,35 @@
         me._listByPos = [];
 
         me._setHotSpotsList = function(hotSpotList) {
+            this._hotSpotList = hotSpotList;
+        };
 
+        me._getHotSpotsList = function() {
+            return this._hotSpotList;
+        };
+
+        me._setListById = function(listById) {
+            this._listById = listById;
+        };
+
+        me._getListById = function() {
+            return this._listById;
+        };
+
+        me._setListByName = function(listByName) {
+            this._listByName = listByName;
+        };
+
+        me._getListByName = function() {
+            return this._listByName;
+        };
+
+        me._setListByPos = function(listByPos) {
+            this._listByPos = listByPos;
+        };
+
+        me._getListByPos = function() {
+            return this._listByPos;
         };
 
         me.GetPosByName = function(name) {
@@ -62,41 +90,49 @@
 
         };
 
-        me._initListById = function(rawData) {
+        me._initListById = function(jSonData) {
+            this._setListById(jSonData);
+        };
+
+        me._initListByName = function(jSonData) {
+            var listByName = {};
+            
+            for(var i in jSonData) {
+                listByName[jSonData[i]["name"][0]] = listByName[jSonData[i]];
+            }
+
+            this._setListByName(jSonData);
 
         };
 
-        me._initListByName = function(rawData) {
+        me._initListByPos = function(jSonData) {
+            var listByName = {};
+            
+            for(var i in jSonData) {
+                listByName[jSonData[i]["VRMLPoint"][0]+"," + jSonData[i]["VRMLPoint"][1]+"," + jSonData[i]["VRMLPoint"][2]] = listByName[jSonData[i]];
+            }
 
-        };
-
-        me._initListByPos = function(rawData) {
+            this._setListByPos(jSonData);
 
         };
         
-        /**
-        @param {array} initFlug
-        byId, byName, byPos, *
-        */
-        me.Init = function(initFlug) {
-
-        };
-
         /**
         * Constructor
         *
         * @method HotSpotInfo.Constructor
         * @this {KatrinTankViewer.HotSpotInfo}
         * @param {Object} O
-        * @param {string} O.hotSpotList
-        * @param {array}  O.initFlug
+        * @param {string} O.hotSpotList  JSON data about hot spots
+        * @param {array}  O.initFlug     ???
         */
         me.Constructor = function(O) {
-            gizmo.Filter(O.hotSpotsList, "Array");
+            gizmo.Filter(O.hotSpotsList, "Object");
 
             this._setHotSpotsList(O.hotSpotList)
 
-            // some stuff with O.initFlug 
+            this._initListById(this._getHotSpotsList());
+            this._initListByName(this._getHotSpotsList());
+            this._initListByPos(this._getHotSpotsList());
         };
 
         me.Constructor(O);
