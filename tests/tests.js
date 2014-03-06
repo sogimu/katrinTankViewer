@@ -1,16 +1,16 @@
 ﻿module( "class NativeServer" );
 
-// test( "Creating without exeptions", function() {
-// 	try {
-// 		var nativeServer = new KTV.NativeServer();
-// 		ok(true,  "Ok");
-// 	}
-// 	catch(e) {
-// 		console.log(e.message);
-// 		ok(false,  "Failed" );
-// 	};
+test( "Creating without exeptions", function() {
+	try {
+		var nativeServer = new KTV.NativeServer();
+		ok(true,  "Ok");
+	}
+	catch(e) {
+		console.log(e.message);
+		ok(false,  "Failed" );
+	};
 		
-// });
+});
 
 // asyncTest( "_sendRequestToServer tests/someFile.json", 1, function() {
 // 	var nativeServer = new KTV.NativeServer();
@@ -22,15 +22,15 @@
 
 // });
 
-// asyncTest( "GetHotSpotsInfo. params: true, func", 1, function() {
-// 	var nativeServer = new KTV.NativeServer();
-// 	nativeServer.GetHotSpotsInfo(true, function(data){
-// 		console.log("GetHotSpotsInfo. params true, func ", data);
-// 		ok(true,  "Ok");
-// 		start();
-// 	});
+asyncTest( "GetHotSpotsInfo", 1, function() {
+	var nativeServer = new KTV.NativeServer();
+	nativeServer.GetHotSpotsInfo(true, function(data){
+		console.log("GetHotSpotsInfo. params true, func ", data);
+		ok(true,  "Ok");
+		start();
+	});
 
-// });
+});
 
 // asyncTest( "GetModel(true, ...", 1, function() {
 // 	var nativeServer = new KTV.NativeServer();
