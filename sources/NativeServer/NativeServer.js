@@ -9,6 +9,7 @@
  *
  * @requires KatrinTankViewer.js
  * @requires NativeServer/HotSpotInfo/HotSpotInfo.js
+ * @requires NativeServer/Model/Model.js
  */
 
 (function(namespace) {
@@ -105,8 +106,9 @@
             if(needUpdate) {
                 var self = this;
                 this._sendRequestToServer(this._pathToModel, function(data) {
-                    self._setModel(data);
-                    callback(data);
+                    var model = new KTV.Model({model: data});
+                    self._setModel(model);
+                    callback(model);
                 });
 
             } else {

@@ -191,3 +191,38 @@ test("GetHotSpotByPos", function() {
 	ok(hotSpotInfo.GetHotSpotByPos("-10638.7,1575.21,97.2829")["name"] == "435-RTP-5-0013",  "Ok");
 	ok(hotSpotInfo.GetHotSpotByPos("-10973,1925.69,89.2006")["name"] == "435-RTP-5-0014",  "Ok");
 });
+
+module("class Model");
+test("Creating without exeptions", function() {
+	try {
+		var model = new KTV.Model({model: {}});
+		ok(true,  "Ok");
+	}
+	catch(e) {
+		console.log(e.message);
+		ok(false,  "Exeption!" );
+	};
+		
+});
+
+test("_setModel", function() {
+	var model = new KTV.Model({model: {}});
+	var modelJSON = {};
+	model._setModel(modelJSON);
+	ok(model._model == modelJSON, "Ok");
+
+});
+
+test("_getModel", function() {
+	var modelJSON = {};
+	var model = new KTV.Model({model: modelJSON});
+	ok(model._getModel() == modelJSON, "Ok");
+
+});
+
+test("GetModel", function() {
+	var modelJSON = {};
+	var model = new KTV.Model({model: modelJSON});
+	ok(model.GetModel() == modelJSON, "Ok");
+
+});
