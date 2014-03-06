@@ -7,3 +7,6 @@
 [submodule "libs/Gizmo"]
 	path = libs/Gizmo
 	url = https://github.com/sogimu/Gizmo.git
+[submodule "utils/Closure-compiler"]
+	path = utils/Closure-compiler
+	url = https://github.com/sogimu/Closure-compiler.git
