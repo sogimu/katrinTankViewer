@@ -1,9 +1,6 @@
 [submodule "utils/jsdoc"]
 	path = utils/jsdoc
 	url = https://github.com/jsdoc3/jsdoc
-[submodule "utils/Closure-compiler"]
-	path = utils/Closure-compiler
-	url = https://github.com/sogimu/Closure-compiler.git
 [submodule "libs/ThreeJS"]
 	path = libs/ThreeJS
 	url = https://github.com/mrdoob/three.js.git
