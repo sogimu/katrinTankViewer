@@ -1,6 +1,6 @@
-﻿module( "class NativeServer" );
+﻿module("class NativeServer" );
 
-test( "Creating without exeptions", function() {
+test("Creating without exeptions", function() {
 	try {
 		var nativeServer = new KTV.NativeServer();
 		ok(true,  "Ok");
@@ -12,66 +12,66 @@ test( "Creating without exeptions", function() {
 		
 });
 
-// asyncTest( "_sendRequestToServer tests/someFile.json", 1, function() {
-// 	var nativeServer = new KTV.NativeServer();
-// 	nativeServer._sendRequestToServer("tests/someFile.json", function(data) {
-// 		console.log("_sendRequestToServer tests/someFile.json ", data);
-// 		ok(true,  "Ok");
-// 		start();
-// 	});
-
-// });
-
-asyncTest("GetHotSpotsInfo(true, function)", 1, function() {
+asyncTest("_sendRequestToServer(tests/someFile.json, function)", 1, function() {
 	var nativeServer = new KTV.NativeServer();
-	nativeServer.GetHotSpotsInfo(true, function(data){
-		console.log("GetHotSpotsInfo(true, ...", data);
+	nativeServer._sendRequestToServer("tests/someFile.json", function(data) {
+		// console.log("_sendRequestToServer tests/someFile.json ", data);
 		ok(true,  "Ok");
 		start();
 	});
 
 });
 
-// asyncTest( "GetModel(true, ...", 1, function() {
-// 	var nativeServer = new KTV.NativeServer();
-// 	nativeServer.GetModel(true, function(data){
-// 		console.log("GetModel. params: true, func ", data);
-// 		ok(true,  "Ok");
-// 		start();
-// 	});
+asyncTest("GetHotSpotsInfo(true, function)", 1, function() {
+	var nativeServer = new KTV.NativeServer();
+	nativeServer.GetHotSpotsInfo(true, function(data){
+		// console.log("GetHotSpotsInfo(true, ...", data);
+		ok(true,  "Ok");
+		start();
+	});
 
-// });
+});
 
-// asyncTest( "GetModel. params: false, func ", 1, function() {
-// 	var nativeServer = new KTV.NativeServer();
+asyncTest("GetModel(true, function)", 1, function() {
+	var nativeServer = new KTV.NativeServer();
+	nativeServer.GetModel(true, function(data){
+		// console.log("GetModel. params: true, func ", data);
+		ok(true,  "Ok");
+		start();
+	});
 
-// 	nativeServer.GetModel(true, function(data0) {
-// 		nativeServer.GetModel(false, function(data1){
-// 			if(data0 === data1) {
-// 				ok(true, "Ok");
-// 				start();
-// 			} else {
-// 				ok(false, "Fail");
-// 				start();
-// 			}
-// 		});
-// 	});	
+});
 
-// });
+asyncTest( "GetModel(false, func)", 1, function() {
+	var nativeServer = new KTV.NativeServer();
 
-// asyncTest( "GetHotSpotsInfo. params: false, func ", 1, function() {
-// 	var nativeServer = new KTV.NativeServer();
+	nativeServer.GetModel(true, function(data0) {
+		nativeServer.GetModel(false, function(data1){
+			if(data0 === data1) {
+				ok(true, "Ok");
+				start();
+			} else {
+				ok(false, "Fail");
+				start();
+			}
+		});
+	});	
 
-// 	nativeServer.GetHotSpotsInfo(true, function(data0) {
-// 		nativeServer.GetHotSpotsInfo(false, function(data1){
-// 			if(data0 === data1) {
-// 				ok(true, "Ok");
-// 				start();
-// 			} else {
-// 				ok(false, "Fail");
-// 				start();
-// 			}
-// 		});
-// 	});	
+});
 
-// });
+asyncTest( "GetHotSpotsInfo(false, func)", 1, function() {
+	var nativeServer = new KTV.NativeServer();
+
+	nativeServer.GetHotSpotsInfo(true, function(data0) {
+		nativeServer.GetHotSpotsInfo(false, function(data1){
+			if(data0 === data1) {
+				ok(true, "Ok");
+				start();
+			} else {
+				ok(false, "Fail");
+				start();
+			}
+		});
+	});	
+
+});
