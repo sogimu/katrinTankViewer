@@ -53,28 +53,16 @@
             return this._listByPos;
         };
 
-        me.GetPosByName = function(name) {
-
+        me.GetHotSpotByName = function(name) {
+            return this._listByName[name];
         };
 
-        me.GetIDByName = function(name) {
-
+        me.GetHotSpotById = function(id) {
+            return this._listById[id];
         };
 
-        me.GetNameByID = function(id) {
-
-        };
-
-        me.GetPosByID = function(id) {
-
-        };
-
-        me.GetNameByPos = function(pos) {
-
-        };
-
-        me.GetIdByPos = function(pos) {
-
+        me.GetHotSpotByPos = function(pos) {
+            return this._listByPos[pos];
         };
 
         // iterators
@@ -98,10 +86,10 @@
             var listByName = {};
             
             for(var i in jSonData) {
-                listByName[jSonData[i]["name"][0]] = listByName[jSonData[i]];
+                listByName[jSonData[i]["name"][0]] = jSonData[i];
             }
 
-            this._setListByName(jSonData);
+            this._setListByName(listByName);
 
         };
 
@@ -109,13 +97,13 @@
             var listByName = {};
             
             for(var i in jSonData) {
-                listByName[jSonData[i]["VRMLPoint"][0]+"," + jSonData[i]["VRMLPoint"][1]+"," + jSonData[i]["VRMLPoint"][2]] = listByName[jSonData[i]];
+                listByName[jSonData[i]["VRMLPoint"][0]+"," + jSonData[i]["VRMLPoint"][1]+"," + jSonData[i]["VRMLPoint"][2]] = jSonData[i];
             }
 
-            this._setListByPos(jSonData);
+            this._setListByPos(listByName);
 
         };
-        
+
         /**
         * Constructor
         *
@@ -128,7 +116,7 @@
         me.Constructor = function(O) {
             gizmo.Filter(O.hotSpotsList, "Object");
 
-            this._setHotSpotsList(O.hotSpotList)
+            this._setHotSpotsList(O.hotSpotsList)
 
             this._initListById(this._getHotSpotsList());
             this._initListByName(this._getHotSpotsList());

@@ -213,19 +213,38 @@ test("_getListByPos", function() {
 
 });
 
-// test("_initListById()", function() {
-// 	var hotSpotsJSON = {
-// 		"1": {"VRMLPointsID": ["2392"], "name": ["435-RTP-5-0005"], "VRMLPoint": ["-11610", "225.804", "-107.296"]}, 
-// 		"2": {"VRMLPointsID": ["2971"], "name": ["435-RTP-5-0013"], "VRMLPoint": ["-10638.7", "1575.21", "97.2829"]},
-// 		"3": {"VRMLPointsID": ["2670"], "name": ["435-RTP-5-0014"], "VRMLPoint": ["-10973", "1925.69", "89.2006"]}};
+test("GetHotSpotByName(\"435-RTP-5-0005\")", function() {
+	var hotSpotsJSON = {
+	"1": {"VRMLPointsID": ["2392"], "name": ["435-RTP-5-0005"], "VRMLPoint": ["-11610", "225.804", "-107.296"]}, 
+	"2": {"VRMLPointsID": ["2971"], "name": ["435-RTP-5-0013"], "VRMLPoint": ["-10638.7", "1575.21", "97.2829"]},
+	"3": {"VRMLPointsID": ["2670"], "name": ["435-RTP-5-0014"], "VRMLPoint": ["-10973", "1925.69", "89.2006"]}};
 
-// 		var hotSpotInfo = new KTV.HotSpotInfo({hotSpotsList: hotSpotsJSON});
-// 		hotSpotInfo._initListById(hotSpotsJSON);
+	var hotSpotInfo = new KTV.HotSpotInfo({hotSpotsList: hotSpotsJSON});
+	ok(hotSpotInfo.GetHotSpotByName("435-RTP-5-0005")["VRMLPointsID"] == "2392",  "Ok");
+	ok(hotSpotInfo.GetHotSpotByName("435-RTP-5-0013")["VRMLPointsID"] == "2971",  "Ok");
+	ok(hotSpotInfo.GetHotSpotByName("435-RTP-5-0014")["VRMLPointsID"] == "2670",  "Ok");
+});
 
-// 		if(hotSpotInfo._getListById(2)["name"] == "435-RTP-5-0013") {
-// 			ok(true,  "Ok");
-// 		} else {
-// 			ok(false,  "Fail");
-// 		}
-	
-// });
+test("GetHotSpotById", function() {
+	var hotSpotsJSON = {
+	"1": {"VRMLPointsID": ["2392"], "name": ["435-RTP-5-0005"], "VRMLPoint": ["-11610", "225.804", "-107.296"]}, 
+	"2": {"VRMLPointsID": ["2971"], "name": ["435-RTP-5-0013"], "VRMLPoint": ["-10638.7", "1575.21", "97.2829"]},
+	"3": {"VRMLPointsID": ["2670"], "name": ["435-RTP-5-0014"], "VRMLPoint": ["-10973", "1925.69", "89.2006"]}};
+
+	var hotSpotInfo = new KTV.HotSpotInfo({hotSpotsList: hotSpotsJSON});
+	ok(hotSpotInfo.GetHotSpotById(1)["name"] == "435-RTP-5-0005",  "Ok");
+	ok(hotSpotInfo.GetHotSpotById(2)["name"] == "435-RTP-5-0013",  "Ok");
+	ok(hotSpotInfo.GetHotSpotById(3)["name"] == "435-RTP-5-0014",  "Ok");
+});
+
+test("GetHotSpotByPos(\"-11610,225.804,-107.296\")", function() {
+	var hotSpotsJSON = {
+	"1": {"VRMLPointsID": ["2392"], "name": ["435-RTP-5-0005"], "VRMLPoint": ["-11610", "225.804", "-107.296"]}, 
+	"2": {"VRMLPointsID": ["2971"], "name": ["435-RTP-5-0013"], "VRMLPoint": ["-10638.7", "1575.21", "97.2829"]},
+	"3": {"VRMLPointsID": ["2670"], "name": ["435-RTP-5-0014"], "VRMLPoint": ["-10973", "1925.69", "89.2006"]}};
+
+	var hotSpotInfo = new KTV.HotSpotInfo({hotSpotsList: hotSpotsJSON});
+	ok(hotSpotInfo.GetHotSpotByPos("-11610,225.804,-107.296")["name"] == "435-RTP-5-0005",  "Ok");
+	ok(hotSpotInfo.GetHotSpotByPos("-10638.7,1575.21,97.2829")["name"] == "435-RTP-5-0013",  "Ok");
+	ok(hotSpotInfo.GetHotSpotByPos("-10973,1925.69,89.2006")["name"] == "435-RTP-5-0014",  "Ok");
+});
