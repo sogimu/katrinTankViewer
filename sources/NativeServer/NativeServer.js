@@ -7,8 +7,8 @@
  * @author sogimu@nxt.ru Aleksandr Lizin aka sogimu
  * @version 0.1
  *
- * @requires katrineTankViewer.js
- * @requires Sys/Sys.js
+ * @requires KatrinTankViewer.js
+ * @requires NativeServer/HotSpotInfo/HotSpotInfo.js
  */
 
 (function(namespace) {
@@ -22,13 +22,7 @@
 
         me._hotSpotsInfo = {};
         me._model = {};
-        /**
-         * Get list of chanells by time in UNIX-stamp. You can choose what chanells you need.
-         *
-         * @method ChanellValues.GetChanellValuesByTime
-         * @param {array} chanells
-         * @param {time}  number
-         */
+
         me._setServerURL = function(url) {
             gizmo.Filter(url, "string");
             this._serverURL = url;
@@ -78,14 +72,20 @@
             $.getJSON(this._serverURL + "/" + pathToFile, callback)
         };
 
+        /**
+         * Get object with information about number hot spots: name of chanell, position on model, ID of VRML point
+         *
+         * @method NativeServer.GetHotSpotsInfo
+         * @param {boolean}   needUpdate   if true - information about hot spots in this class will be update
+         * @param {Function}  callback     function which start when data had been get
+         */
         me.GetHotSpotsInfo = function(needUpdate, callback) {
             if(needUpdate) {
-                var hotSpotsInfo = {};
+                var self = this;
                 this._sendRequestToServer(this._pathToHotSpotsInfo, function(data) {
-                    hotSpotsInfo = data;
+                    self._setHotSpotsInfo(hotSpotsInfo);    
                     callback(data);
                 });
-                this._setHotSpotsInfo(hotSpotsInfo);
 
             } else {
                 callback(this._getHotSpotsInfo());
@@ -93,14 +93,20 @@
 
         };
 
+        /**
+         * Get model
+         *
+         * @method NativeServer.GetModel
+         * @param {boolean}   needUpdate   if true - information about hot spots in this class will be update
+         * @param {Function}  callback     function which start when data had been get
+         */
         me.GetModel = function(needUpdate, callback) {
             if(needUpdate) {
-                var model = {};
+                var self = this;
                 this._sendRequestToServer(this._pathToModel, function(data) {
-                    model = data;
+                    self._setModel(model);
                     callback(data);
                 });
-                this._setModel(model);
 
             } else {
                 callback(this._getModel());
@@ -113,9 +119,9 @@
         * @method NativeServer.Constructor
         * @this {KatrinTankViewer.NativeServer}
         * @param {Object} O
-        * @param {string} O.serverURL
-        * @param {string} O.pathToModel
-        * @param {string} O.pathToHotSpotsInfo
+        * @param {string} O.serverURL           URL to the server, for example http://localhost/develop/katrinTankViewer/
+        * @param {string} O.pathToModel         path to model, for example data/MS.js
+        * @param {string} O.pathToHotSpotsInfo  path to hot spot's information, for example data/hotSpots.json
         */
         me.Constructor = function(O) {
             if(O) {
@@ -138,9 +144,11 @@
             };
 
             this.GetHotSpotsInfo(true, function(data) {
-                console.log(data);});
+                // console.log(data);
+            });
             this.GetModel(true, function(data) {
-                console.log(data);});
+                // console.log(data);
+            });
             
         };
 

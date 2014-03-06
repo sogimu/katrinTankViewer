@@ -7,6 +7,11 @@
  * @author sogimu@nxt.ru Aleksandr Lizin aka sogimu
  * @version 0.1
  *
+ * @requires KatrinTankViewer.js
+ * @requires Browser/Browser.js
+ * @requires NativeServer/NativeServer.js
+ * @requires AdeiServer/AdeiServer.js
+ * @requires Viewer/Viewer.js
  */
 
 (function(namespace) {

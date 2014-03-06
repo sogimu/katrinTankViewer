@@ -10,6 +10,3 @@
 [submodule "libs/Gizmo"]
 	path = libs/Gizmo
 	url = https://github.com/sogimu/Gizmo.git
-[submodule "libs/JQuery"]
-	path = libs/JQuery
-	url = https://github.com/jquery/jquery.git

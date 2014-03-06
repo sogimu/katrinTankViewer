@@ -104,6 +104,13 @@
 
     
     
+    <h5>Requires:</h5>
+    <ul>
+        <li>module:KatrinTankViewer.js</li>
+    
+        <li>module:NativeServer/HotSpotInfo/HotSpotInfo.js</li>
+    </ul>
+    
 
     
 
@@ -125,6 +132,14 @@
     
     
     
+    
+        <h3 class="subsection-title">Requires</h3>
+        
+        <ul>
+            <li>module:KatrinTankViewer.js</li>
+        
+            <li>module:NativeServer/HotSpotInfo/HotSpotInfo.js</li>
+        </ul>
     
     
     
@@ -242,7 +257,7 @@
             
             
             
-            <td class="description last"></td>
+            <td class="description last">URL to the server, for example http://localhost/develop/katrinTankViewer/</td>
         </tr>
 	
 	
@@ -265,7 +280,7 @@
             
             
             
-            <td class="description last"></td>
+            <td class="description last">path to model, for example data/MS.js</td>
         </tr>
 	
 	
@@ -288,7 +303,7 @@
             
             
             
-            <td class="description last"></td>
+            <td class="description last">path to hot spot's information, for example data/hotSpots.json</td>
         </tr>
 	
 	
@@ -325,7 +340,291 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NativeServer.js.html">NativeServer/NativeServer.js</a>, <a href="NativeServer.js.html#line40">line 40</a>
+        <a href="NativeServer.js.html">NativeServer/NativeServer.js</a>, <a href="NativeServer.js.html#line116">line 116</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="GetHotSpotsInfo"><span class="type-signature">&lt;static> </span>GetHotSpotsInfo<span class="signature">(needUpdate, callback)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Get object with information about number hot spots: name of chanell, position on model, ID of VRML point
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>needUpdate</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">if true - information about hot spots in this class will be update</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">function which start when data had been get</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="NativeServer.js.html">NativeServer/NativeServer.js</a>, <a href="NativeServer.js.html#line75">line 75</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="GetModel"><span class="type-signature">&lt;static> </span>GetModel<span class="signature">(needUpdate, callback)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Get model
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>needUpdate</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">if true - information about hot spots in this class will be update</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">function which start when data had been get</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="NativeServer.js.html">NativeServer/NativeServer.js</a>, <a href="NativeServer.js.html#line96">line 96</a>
     </li></ul></dd>
     
     
@@ -374,7 +673,7 @@
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Wed Mar 05 2014 12:18:34 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Thu Mar 06 2014 11:20:46 GMT+0700 (NOVT)
 </footer>
 
 <script> prettyPrint(); </script>

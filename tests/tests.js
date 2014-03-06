@@ -45,18 +45,28 @@ asyncTest( "Geting hotSpotsInfo", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 	nativeServer.GetHotSpotsInfo(false, function(data){
 		console.log("Hot spots info: ", data);
-		ok(true,  "Ok");
-		start();
+		if(data[1]) {
+			ok(true, "Ok");
+			start();
+		} else {
+			ok(false, "Fail");
+			start();
+		}
 	});
 
 });
 
 asyncTest( "Geting model", 1, function() {
 	var nativeServer = new KTV.NativeServer();
-	nativeServer.GetModel(false, function(data){
+	nativeServer.GetModel(false, function(data) {
 		console.log("Model: ", data);
-		ok(true,  "Ok");
-		start();
+		if(data.dsf) {
+			ok(true, "Ok");
+			start();
+		} else {
+			ok(false, "Fail");
+			start();
+		}
 	});
 
 });
