@@ -1,0 +1,5 @@
+*.log
+testsResult.xml
+katrinTankViewer.js
+doc/*
+

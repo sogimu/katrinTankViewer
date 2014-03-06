@@ -4,10 +4,15 @@ import re
 import sys
 import json
 import datetime
+import ntpath
+
+def path_leaf(path):
+    head, tail = ntpath.split(path)
+    return tail or ntpath.basename(head)
 
 def findValueByKey(text, key):
     prog = re.compile(key + "\s*=\s*([a-z,A-Z,\d,-]*)")
-    return prog.findall(text)
+    return prog.findall(text)[0]
 
 def chanellFactory(text):
     chanell = {"name": ""}
@@ -158,44 +163,44 @@ if(__name__ == '__main__'):
     parser.add_argument('JSON_FIle', type=str, help='path to resulting JSON file')
     args = parser.parse_args()
 
-    try:
+    #try:
     #     pathToCisFile = "ms_online5.cis"#args.CIS_File
     #     pathToVRMLFIle = "MS.WRL"#args.VRML_FIle
     #     pathToJSONFile = "hotSpot.json"#args.JSON_File
 
-        pathToCisFile = args.CIS_File
-        pathToVRMLFIle = args.VRML_FIle
-        pathToJSONFile = args.JSON_FIle
+    pathToCisFile = args.CIS_File
+    pathToVRMLFIle = args.VRML_FIle
+    pathToJSONFile = args.JSON_FIle
 
-        logging.basicConfig(filename=str(datetime.datetime.now()) + "> " + pathToCisFile + "+" + pathToVRMLFIle + "=" + pathToJSONFile,level=logging.DEBUG)
+    logging.basicConfig(filename=str(datetime.datetime.now()) + "> " + path_leaf(pathToCisFile) + "+" + path_leaf(pathToVRMLFIle) + "=" + path_leaf(pathToJSONFile) + ".log",level=logging.DEBUG)
 
-        f0 = open(pathToCisFile, 'r')
-        cisFile = f0.read()
-        f0.close()
+    f0 = open(pathToCisFile, 'r')
+    cisFile = f0.read()
+    f0.close()
 
-        f1 = open(pathToVRMLFIle, 'r')
-        vrmlFIle = f1.read()
-        f1.close()
+    f1 = open(pathToVRMLFIle, 'r')
+    vrmlFIle = f1.read()
+    f1.close()
 
-        pointPosList = getPointPos(vrmlFIle)
-        chanellList = getChanells(cisFile)
-        hotSpotsList = getHotSpots(cisFile)
+    pointPosList = getPointPos(vrmlFIle)
+    chanellList = getChanells(cisFile)
+    hotSpotsList = getHotSpots(cisFile)
 
-        for hotSpotIndex in hotSpotsList:
-            hotSpotsList[hotSpotIndex]["VRMLPoint"] = pointPosList[int(hotSpotsList[hotSpotIndex]["VRMLPointsID"][0])]
-            hotSpotsList[hotSpotIndex]["name"] = chanellList[hotSpotIndex]["name"]
+    for hotSpotIndex in hotSpotsList:
+        hotSpotsList[hotSpotIndex]["VRMLPoint"] = pointPosList[int(hotSpotsList[hotSpotIndex]["VRMLPointsID"][0])]
+        hotSpotsList[hotSpotIndex]["name"] = chanellList[hotSpotIndex]["name"]
 
-        hotSpotsJSON = json.dumps(hotSpotsList)
+    hotSpotsJSON = json.dumps(hotSpotsList)
 
-        f3 = open(pathToJSONFile, 'w+')
-        f3.write(hotSpotsJSON)
-        f3.close()
+    f3 = open(pathToJSONFile, 'w+')
+    f3.write(hotSpotsJSON)
+    f3.close()
 
-        print "Number of hot spots from cis file: " + str(len(hotSpotsList))
-        print "Number of points in VRML file: " + str(len(pointPosList))
-        print "File " + pathToJSONFile + " have done!"
+    print "Number of hot spots from cis file: " + str(len(hotSpotsList))
+    print "Number of points in VRML file: " + str(len(pointPosList))
+    print "File " + pathToJSONFile + " have done!"
 
-    except:
-        e = sys.exc_info()[1]
-        print(e)
-        sys.exit(2)
+    # except:
+    #     e = sys.exc_info()[1]
+    #     print(e)
+    #     sys.exit(2)

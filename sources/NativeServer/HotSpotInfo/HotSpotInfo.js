@@ -86,7 +86,8 @@
             var listByName = {};
             
             for(var i in jSonData) {
-                listByName[jSonData[i]["name"][0]] = jSonData[i];
+                var rightHotPoint = _.cloneDeep(jSonData[i]);
+                listByName[jSonData[i]["name"]] = jSonData[i];
             }
 
             this._setListByName(listByName);

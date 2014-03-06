@@ -18,7 +18,7 @@
 
         me._serverURL = "http://localhost/develop/katrinTankViewer/";
         me._pathToModel = "data/MS.js";
-        me._pathToHotSpotsInfo = "data/hotSpots.json";
+        me._pathToHotSpotsInfo = "data/hotSpotsInfo";
 
         me._hotSpotsInfo = {};
         me._model = {};
@@ -83,8 +83,9 @@
             if(needUpdate) {
                 var self = this;
                 this._sendRequestToServer(this._pathToHotSpotsInfo, function(data) {
-                    self._setHotSpotsInfo(data);    
-                    callback(data);
+                    var hotSpotInfo = new KTV.HotSpotInfo({hotSpotsList: data});    
+                    self._setHotSpotsInfo(hotSpotInfo);
+                    callback(hotSpotInfo);
                 });
 
             } else {
@@ -142,7 +143,7 @@
                     };break;
                 };    
             };
-            
+
         };
 
         me.Constructor(O);
