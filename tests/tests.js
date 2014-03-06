@@ -25,7 +25,7 @@ test( "Creating without exeptions", function() {
 asyncTest("GetHotSpotsInfo", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 	nativeServer.GetHotSpotsInfo(true, function(data){
-		// console.log("GetHotSpotsInfo. params true, func ", data);
+		console.log("GetHotSpotsInfo. params true, func ", data);
 		ok(true,  "Ok");
 		start();
 	});
