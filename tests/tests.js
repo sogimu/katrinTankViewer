@@ -213,7 +213,7 @@ test("_getListByPos", function() {
 
 });
 
-test("GetHotSpotByName(\"435-RTP-5-0005\")", function() {
+test("GetHotSpotByName", function() {
 	var hotSpotsJSON = {
 	"1": {"VRMLPointsID": ["2392"], "name": ["435-RTP-5-0005"], "VRMLPoint": ["-11610", "225.804", "-107.296"]}, 
 	"2": {"VRMLPointsID": ["2971"], "name": ["435-RTP-5-0013"], "VRMLPoint": ["-10638.7", "1575.21", "97.2829"]},
@@ -237,7 +237,7 @@ test("GetHotSpotById", function() {
 	ok(hotSpotInfo.GetHotSpotById(3)["name"] == "435-RTP-5-0014",  "Ok");
 });
 
-test("GetHotSpotByPos(\"-11610,225.804,-107.296\")", function() {
+test("GetHotSpotByPos", function() {
 	var hotSpotsJSON = {
 	"1": {"VRMLPointsID": ["2392"], "name": ["435-RTP-5-0005"], "VRMLPoint": ["-11610", "225.804", "-107.296"]}, 
 	"2": {"VRMLPointsID": ["2971"], "name": ["435-RTP-5-0013"], "VRMLPoint": ["-10638.7", "1575.21", "97.2829"]},

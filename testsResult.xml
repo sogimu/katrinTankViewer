@@ -1,9 +1,43 @@
 <?xml version="1.0"?>
 <!--
- Tests completed in 16 milliseconds.
-1 tests of 1 passed, 0 failed. 
+ Tests completed in 171 milliseconds.
+24 tests of 24 passed, 0 failed. 
 -->
-<testsuite name="QUnit - JavaScript Tests" timestamp="2014-03-06T13:00:31Z" tests="1" failures="0" time="0.016">
+<testsuite name="QUnit - JavaScript Tests" timestamp="2014-03-06T14:38:03Z" tests="24" failures="0" time="0.171">
 <testcase name="Creating without exeptions" classname="class NativeServer">
+</testcase>
+<testcase name="_sendRequestToServer(tests/someFile.json, function)" classname="class NativeServer">
+</testcase>
+<testcase name="GetHotSpotsInfo(true, function)" classname="class NativeServer">
+</testcase>
+<testcase name="GetModel(true, function)" classname="class NativeServer">
+</testcase>
+<testcase name="GetModel(false, func)" classname="class NativeServer">
+</testcase>
+<testcase name="GetHotSpotsInfo(false, func)" classname="class NativeServer">
+</testcase>
+<testcase name="Creating without exeptions" classname="class HotSpotInfo">
+</testcase>
+<testcase name="_setHotSpotsList" classname="class HotSpotInfo">
+</testcase>
+<testcase name="_getHotSpotsList" classname="class HotSpotInfo">
+</testcase>
+<testcase name="_setListById" classname="class HotSpotInfo">
+</testcase>
+<testcase name="_setListByName" classname="class HotSpotInfo">
+</testcase>
+<testcase name="_setListByPos" classname="class HotSpotInfo">
+</testcase>
+<testcase name="_getListById" classname="class HotSpotInfo">
+</testcase>
+<testcase name="_getListByName" classname="class HotSpotInfo">
+</testcase>
+<testcase name="_getListByPos" classname="class HotSpotInfo">
+</testcase>
+<testcase name="GetHotSpotByName("435-RTP-5-0005")" classname="class HotSpotInfo">
+</testcase>
+<testcase name="GetHotSpotById" classname="class HotSpotInfo">
+</testcase>
+<testcase name="GetHotSpotByPos("-11610,225.804,-107.296")" classname="class HotSpotInfo">
 </testcase>
 </testsuite>
