@@ -14,17 +14,17 @@ test( "Creating without exeptions", function() {
 asyncTest( "_sendRequestToServer tests/someFile.json", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 	nativeServer._sendRequestToServer("tests/someFile.json", function(data) {
-		console.log("_sendRequestToServer tests/someFile.json: ", data);
+		console.log("_sendRequestToServer tests/someFile.json ", data);
 		ok(true,  "Ok");
 		start();
 	});
 
 });
 
-asyncTest( "GetHotSpotsInfo(true, ...", 1, function() {
+asyncTest( "GetHotSpotsInfo. params: true, func", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 	nativeServer.GetHotSpotsInfo(true, function(data){
-		console.log("GetHotSpotsInfo(true, ...: ", data);
+		console.log("GetHotSpotsInfo. params true, func ", data);
 		ok(true,  "Ok");
 		start();
 	});
@@ -34,14 +34,14 @@ asyncTest( "GetHotSpotsInfo(true, ...", 1, function() {
 asyncTest( "GetModel(true, ...", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 	nativeServer.GetModel(true, function(data){
-		console.log("GetModel(true, ...: ", data);
+		console.log("GetModel. params: true, func ", data);
 		ok(true,  "Ok");
 		start();
 	});
 
 });
 
-asyncTest( "GetModel(false, ...", 1, function() {
+asyncTest( "GetModel. params: false, func ", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 
 	nativeServer.GetModel(true, function(data0) {
@@ -58,7 +58,7 @@ asyncTest( "GetModel(false, ...", 1, function() {
 
 });
 
-asyncTest( "GetHotSpotsInfo(false, ...", 1, function() {
+asyncTest( "GetHotSpotsInfo. params: false, func ", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 
 	nativeServer.GetHotSpotsInfo(true, function(data0) {
