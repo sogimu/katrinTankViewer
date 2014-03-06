@@ -11,62 +11,66 @@ test( "Creating without exeptions", function() {
 		
 });
 
-asyncTest( "Send request to the server", 1, function() {
+asyncTest( "_sendRequestToServer tests/someFile.json", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 	nativeServer._sendRequestToServer("tests/someFile.json", function(data) {
-		console.log("Text from test file: ", data);
+		console.log("_sendRequestToServer tests/someFile.json: ", data);
 		ok(true,  "Ok");
 		start();
 	});
 
 });
 
-asyncTest( "Send request to server for hotSpotsInfo", 1, function() {
+asyncTest( "GetHotSpotsInfo(true, ...", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 	nativeServer.GetHotSpotsInfo(true, function(data){
-		console.log("Hot spots info: ", data);
+		console.log("GetHotSpotsInfo(true, ...: ", data);
 		ok(true,  "Ok");
 		start();
 	});
 
 });
 
-asyncTest( "Send request to server for model", 1, function() {
+asyncTest( "GetModel(true, ...", 1, function() {
 	var nativeServer = new KTV.NativeServer();
 	nativeServer.GetModel(true, function(data){
-		console.log("Model: ", data);
+		console.log("GetModel(true, ...: ", data);
 		ok(true,  "Ok");
 		start();
 	});
 
 });
 
-asyncTest( "Geting hotSpotsInfo", 1, function() {
+asyncTest( "GetModel(false, ...", 1, function() {
 	var nativeServer = new KTV.NativeServer();
-	nativeServer.GetHotSpotsInfo(false, function(data){
-		console.log("Hot spots info: ", data);
-		if(data[1]) {
-			ok(true, "Ok");
-			start();
-		} else {
-			ok(false, "Fail");
-			start();
-		}
-	});
+
+	nativeServer.GetModel(true, function(data0) {
+		nativeServer.GetModel(false, function(data1){
+			if(data0 === data1) {
+				ok(true, "Ok");
+				start();
+			} else {
+				ok(false, "Fail");
+				start();
+			}
+		});
+	});	
 
 });
 
-asyncTest( "Geting model", 1, function() {
+asyncTest( "GetHotSpotsInfo(false, ...", 1, function() {
 	var nativeServer = new KTV.NativeServer();
-	nativeServer.GetModel(false, function(data) {
-		console.log("Model: ", data);
-		if(data.dsf) {
-			ok(true, "Ok");
-			start();
-		} else {
-			ok(false, "Fail");
-			start();
-		}
-	});
+
+	nativeServer.GetHotSpotsInfo(true, function(data0) {
+		nativeServer.GetHotSpotsInfo(false, function(data1){
+			if(data0 === data1) {
+				ok(true, "Ok");
+				start();
+			} else {
+				ok(false, "Fail");
+				start();
+			}
+		});
+	});	
 
 });

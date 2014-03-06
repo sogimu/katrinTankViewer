@@ -1,0 +1,5 @@
+{
+    /* Same as: --output-encoding=utf8 */
+    "outputEncoding": "utf8",
+    "localToRemoteUrlAccess" : true
+}

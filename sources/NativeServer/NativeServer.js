@@ -83,7 +83,7 @@
             if(needUpdate) {
                 var self = this;
                 this._sendRequestToServer(this._pathToHotSpotsInfo, function(data) {
-                    self._setHotSpotsInfo(hotSpotsInfo);    
+                    self._setHotSpotsInfo(data);    
                     callback(data);
                 });
 
@@ -104,7 +104,7 @@
             if(needUpdate) {
                 var self = this;
                 this._sendRequestToServer(this._pathToModel, function(data) {
-                    self._setModel(model);
+                    self._setModel(data);
                     callback(data);
                 });
 
@@ -143,12 +143,12 @@
                 };    
             };
 
-            this.GetHotSpotsInfo(true, function(data) {
-                // console.log(data);
-            });
-            this.GetModel(true, function(data) {
-                // console.log(data);
-            });
+            // this.GetHotSpotsInfo(true, function(data) {
+            //     // console.log("Getted HotSpotsInfo after instance");
+            // });
+            // this.GetModel(true, function(data) {
+            //     // console.log("Getted Model after instance");
+            // });
             
         };
 

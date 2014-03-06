@@ -1,9 +1,22 @@
+_sendRequestToServer tests/someFile.json:  [object Object]
+GetHotSpotsInfo(true, ...:  [object Object]
+GetModel(true, ...:  [object Object]
 <?xml version="1.0"?>
 <!--
- Tests completed in 14 milliseconds.
-1 tests of 1 passed, 0 failed. 
+ Tests completed in 155 milliseconds.
+6 tests of 6 passed, 0 failed. 
 -->
-<testsuite name="QUnit - JavaScript Tests" timestamp="2014-03-03T12:54:23Z" tests="1" failures="0" time="0.014">
-<testcase name="Test" classname="class katrinTankViewer">
+<testsuite name="QUnit - JavaScript Tests" timestamp="2014-03-06T11:08:34Z" tests="6" failures="0" time="0.155">
+<testcase name="Creating without exeptions" classname="class NativeServer">
+</testcase>
+<testcase name="_sendRequestToServer tests/someFile.json" classname="class NativeServer">
+</testcase>
+<testcase name="GetHotSpotsInfo(true, ..." classname="class NativeServer">
+</testcase>
+<testcase name="GetModel(true, ..." classname="class NativeServer">
+</testcase>
+<testcase name="GetModel(false, ..." classname="class NativeServer">
+</testcase>
+<testcase name="GetHotSpotsInfo(false, ..." classname="class NativeServer">
 </testcase>
 </testsuite>
