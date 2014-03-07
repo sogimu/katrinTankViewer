@@ -25,7 +25,7 @@
         me._model = {};
 
         me._setServerURL = function(url) {
-            gizmo.Filter(url, "string");
+            gizmo.Filter(url, "String");
             this._serverURL = url;
         };
 
@@ -34,7 +34,7 @@
         };
 
         me._setPathToModel = function(path) {
-            gizmo.Filter(path, "string");
+            gizmo.Filter(path, "String");
             this._pathToModel = path;
         };
 
@@ -43,7 +43,7 @@
         };
         
         me._setPathToHotSpotsInfo = function(path) {
-            gizmo.Filter(path, "string");
+            gizmo.Filter(path, "String");
             this._pathToHotSpotsInfo = path;
         };
 
@@ -122,25 +122,25 @@
         * @method NativeServer.Constructor
         * @this {KatrinTankViewer.NativeServer}
         * @param {Object} O
-        * @param {string} O.serverURL           URL to the server, for example http://localhost/develop/katrinTankViewer/
-        * @param {string} O.pathToModel         path to model, for example data/MS.js
-        * @param {string} O.pathToHotSpotsInfo  path to hot spot's information, for example data/hotSpots.json
+        * @param {String} O.serverURL           URL to the server, for example http://localhost/develop/katrinTankViewer/
+        * @param {String} O.pathToModel         path to model, for example data/MS.js
+        * @param {String} O.pathToHotSpotsInfo  path to hot spot's information, for example data/hotSpots.json
         */
         me.Constructor = function(O) {
             if(O) {
                 switch(O) {
                     case O.serverURL : {
-                        gizmo.Filter(O.serverURL, "string");
+                        gizmo.Filter(O.serverURL, "String");
                         this._setServerURL(O.serverURL);
                     };break;
 
                     case O.pathToModel : {
-                        gizmo.Filter(O.pathToModel, "string");
+                        gizmo.Filter(O.pathToModel, "String");
                         this._setPathToModel(O.pathToModel);
                     };break;
 
                     case O.pathToHotSpotsInfo : {
-                        gizmo.Filter(O.pathToHotSpotsInfo, "string");
+                        gizmo.Filter(O.pathToHotSpotsInfo, "String");
                         this._setPathToHotSpotsInfo(O.pathToHotSpotsInfo);
                     };break;
                 };    

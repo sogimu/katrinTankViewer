@@ -226,3 +226,18 @@ test("GetModel", function() {
 	ok(model.GetModel() == modelJSON, "Ok");
 
 });
+
+module("class DataCacher");
+
+asyncTest("getData", 1, function() {
+	var numberOfInvokeCallbacks = 0;
+	DataCacher.getData("db_server", "db_name", "db_group", "db_mask", "window", function(data) {
+		numberOfInvokeCallbacks++;
+		// console.log(data);
+		if(numberOfInvokeCallbacks == 208) {
+			ok(true,  "Ok");
+			start();
+		}
+	});
+
+});

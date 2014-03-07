@@ -22,6 +22,7 @@
         me._listByPos = [];
 
         me._setHotSpotsList = function(hotSpotList) {
+            gizmo.Filter(hotSpotList, "Object");
             this._hotSpotList = hotSpotList;
         };
 
@@ -30,6 +31,7 @@
         };
 
         me._setListById = function(listById) {
+            gizmo.Filter(listById, "Object");
             this._listById = listById;
         };
 
@@ -38,6 +40,7 @@
         };
 
         me._setListByName = function(listByName) {
+            gizmo.Filter(listByName, "Object");
             this._listByName = listByName;
         };
 
@@ -46,6 +49,7 @@
         };
 
         me._setListByPos = function(listByPos) {
+            gizmo.Filter(listByPos, "Object");
             this._listByPos = listByPos;
         };
 
@@ -54,14 +58,17 @@
         };
 
         me.GetHotSpotByName = function(name) {
+            gizmo.Filter(name, "String");
             return this._listByName[name];
         };
 
         me.GetHotSpotById = function(id) {
+            gizmo.Filter(id, "Number");
             return this._listById[id];
         };
 
         me.GetHotSpotByPos = function(pos) {
+            gizmo.Filter(pos, "String");
             return this._listByPos[pos];
         };
 
@@ -79,10 +86,12 @@
         };
 
         me._initListById = function(jSonData) {
+            gizmo.Filter(jSonData, "Object");
             this._setListById(jSonData);
         };
 
         me._initListByName = function(jSonData) {
+            gizmo.Filter(jSonData, "Object");
             var listByName = {};
             
             for(var i in jSonData) {
@@ -95,6 +104,7 @@
         };
 
         me._initListByPos = function(jSonData) {
+            gizmo.Filter(jSonData, "Object");
             var listByName = {};
             
             for(var i in jSonData) {
@@ -111,7 +121,7 @@
         * @method HotSpotInfo.Constructor
         * @this {KatrinTankViewer.HotSpotInfo}
         * @param {Object} O
-        * @param {string} O.hotSpotList  JSON data about hot spots
+        * @param {String} O.hotSpotList  JSON data about hot spots
         * @param {array}  O.initFlug     ???
         */
         me.Constructor = function(O) {
