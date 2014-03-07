@@ -17,9 +17,9 @@
 
         var me = {};
 
-        me._serverURL = "http://localhost/katrinTankViewer";
-        me._pathToModel = "data/MS.js";
-        me._pathToHotSpotsInfo = "data/hotSpotsInfo.json";
+        me._serverURL = "";
+        me._pathToModel = "../data/MS.js";
+        me._pathToHotSpotsInfo = "../data/hotSpotsInfo.json";
 
         me._hotSpotsInfo = {};
         me._model = {};
@@ -70,7 +70,7 @@
         };
 
         me._sendRequestToServer = function(pathToFile, callback) {
-            $.getJSON(this._serverURL + "/" + pathToFile, callback)
+            $.getJSON(this._serverURL + pathToFile, callback)
         };
 
         /**

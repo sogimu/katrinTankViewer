@@ -14,7 +14,7 @@ test("Creating without exeptions", function() {
 
 asyncTest("_sendRequestToServer(tests/someFile.json, function)", 1, function() {
 	var nativeServer = new KTV.NativeServer();
-	nativeServer._sendRequestToServer("tests/someFile.json", function(data) {
+	nativeServer._sendRequestToServer("someFile.json", function(data) {
 		// console.log("_sendRequestToServer tests/someFile.json ", data);
 		ok(true,  "Ok");
 		start();
