@@ -17,9 +17,9 @@
 
         var me = {};
 
-        me._serverURL = "http://localhost/develop/katrinTankViewer/";
+        me._serverURL = "http://localhost/katrinTankViewer";
         me._pathToModel = "data/MS.js";
-        me._pathToHotSpotsInfo = "data/hotSpotsInfo";
+        me._pathToHotSpotsInfo = "data/hotSpotsInfo.json";
 
         me._hotSpotsInfo = {};
         me._model = {};
